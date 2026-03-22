@@ -2,269 +2,38 @@
   "project": "IT Ticket Management System",
   "version": "1.0.0",
   "features": [
-    {
-      "id": 1,
-      "module": "用户与权限",
-      "name": "用户注册/登录",
-      "description": "用户注册和登录功能",
-      "status": "completed",
-      "passes": true
-    },
-    {
-      "id": 2,
-      "module": "用户与权限",
-      "name": "JWT认证",
-      "description": "基于JWT的无状态认证机制",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 3,
-      "module": "用户与权限",
-      "name": "角色管理",
-      "description": "管理员/产品经理/程序员/普通用户角色",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 4,
-      "module": "用户与权限",
-      "name": "权限控制(RBAC)",
-      "description": "基于角色的访问控制",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 5,
-      "module": "用户与权限",
-      "name": "用户个人信息管理",
-      "description": "用户查看和修改个人信息",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 6,
-      "module": "用户与权限",
-      "name": "组织架构管理",
-      "description": "部门、团队管理",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 7,
-      "module": "工单核心",
-      "name": "工单创建表单",
-      "description": "标题、描述、类型、优先级、附件",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 8,
-      "module": "工单核心",
-      "name": "工单编号规则",
-      "description": "自动生成唯一编号",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 9,
-      "module": "工单核心",
-      "name": "工单列表/看板视图",
-      "description": "工单列表和看板两种展示方式",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 10,
-      "module": "工单核心",
-      "name": "工单详情页",
-      "description": "工单详细信息展示",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 11,
-      "module": "工单核心",
-      "name": "工单搜索/筛选",
-      "description": "按条件搜索和筛选工单",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 12,
-      "module": "工单核心",
-      "name": "工单模板",
-      "description": "预设常用工单模板",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 13,
-      "module": "工单核心",
-      "name": "附件上传",
-      "description": "工单附件上传和管理",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 14,
-      "module": "工作流引擎",
-      "name": "状态流转",
-      "description": "新建→待评估→开发中→待测试→已完成→已关闭",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 15,
-      "module": "工作流引擎",
-      "name": "自动派发规则",
-      "description": "根据规则自动分配工单",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 16,
-      "module": "工作流引擎",
-      "name": "手动分配/转派",
-      "description": "手动分配或转派工单",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 17,
-      "module": "工作流引擎",
-      "name": "驳回/退回操作",
-      "description": "工单驳回和退回功能",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 18,
-      "module": "工作流引擎",
-      "name": "SLA服务等级",
-      "description": "响应时限、处理时限",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 19,
-      "module": "工作流引擎",
-      "name": "超时提醒",
-      "description": "工单超时自动提醒",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 20,
-      "module": "工作流引擎",
-      "name": "工单历史/操作日志",
-      "description": "记录工单的所有操作历史",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 21,
-      "module": "通知系统",
-      "name": "站内消息",
-      "description": "系统内部消息通知",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 22,
-      "module": "通知系统",
-      "name": "邮件通知",
-      "description": "邮件通知（开发阶段模拟）",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 23,
-      "module": "通知系统",
-      "name": "通知偏好设置",
-      "description": "用户自定义通知偏好",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 24,
-      "module": "数据统计",
-      "name": "个人工作台/数据看板",
-      "description": "个人工作台和数据概览",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 25,
-      "module": "数据统计",
-      "name": "团队工作量统计",
-      "description": "团队工作量统计报表",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 26,
-      "module": "数据统计",
-      "name": "工单趋势分析",
-      "description": "工单趋势图表分析",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 27,
-      "module": "数据统计",
-      "name": "响应时间统计",
-      "description": "工单响应时间统计分析",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 28,
-      "module": "数据统计",
-      "name": "导出Excel报表",
-      "description": "导出数据报表为Excel格式",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 29,
-      "module": "系统管理",
-      "name": "系统配置",
-      "description": "系统参数配置管理",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 30,
-      "module": "系统管理",
-      "name": "操作审计日志",
-      "description": "系统操作审计日志",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 31,
-      "module": "系统管理",
-      "name": "系统公告管理",
-      "description": "系统公告发布和管理",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 32,
-      "module": "嵌入式组件",
-      "name": "JS SDK",
-      "description": "供第三方系统嵌入的JS SDK",
-      "status": "pending",
-      "passes": false
-    },
-    {
-      "id": 33,
-      "module": "嵌入式组件",
-      "name": "API接口",
-      "description": "供第三方系统调用的REST API",
-      "status": "pending",
-      "passes": false
-    }
+    {"id": 1, "module": "用户与权限", "name": "用户注册/登录", "description": "用户注册和登录功能", "status": "completed", "passes": true},
+    {"id": 2, "module": "用户与权限", "name": "JWT认证", "description": "基于JWT的无状态认证机制", "status": "completed", "passes": true},
+    {"id": 3, "module": "用户与权限", "name": "角色管理", "description": "管理员/产品经理/程序员/普通用户角色", "status": "completed", "passes": true},
+    {"id": 4, "module": "用户与权限", "name": "权限控制(RBAC)", "description": "基于角色的访问控制", "status": "completed", "passes": true},
+    {"id": 5, "module": "用户与权限", "name": "用户个人信息管理", "description": "用户查看和修改个人信息", "status": "completed", "passes": true},
+    {"id": 6, "module": "用户与权限", "name": "组织架构管理", "description": "部门、团队管理", "status": "completed", "passes": true},
+    {"id": 7, "module": "工单核心", "name": "工单创建表单", "description": "标题、描述、类型、优先级、附件", "status": "completed", "passes": true},
+    {"id": 8, "module": "工单核心", "name": "工单编号规则", "description": "自动生成唯一编号", "status": "completed", "passes": true},
+    {"id": 9, "module": "工单核心", "name": "工单列表/看板视图", "description": "工单列表和看板两种展示方式", "status": "completed", "passes": true},
+    {"id": 10, "module": "工单核心", "name": "工单详情页", "description": "工单详细信息展示", "status": "completed", "passes": true},
+    {"id": 11, "module": "工单核心", "name": "工单搜索/筛选", "description": "按条件搜索和筛选工单", "status": "completed", "passes": true},
+    {"id": 12, "module": "工单核心", "name": "工单模板", "description": "预设常用工单模板", "status": "pending", "passes": false},
+    {"id": 13, "module": "工单核心", "name": "附件上传", "description": "工单附件上传和管理", "status": "pending", "passes": false},
+    {"id": 14, "module": "工作流引擎", "name": "状态流转", "description": "新建→待评估→开发中→待测试→已完成→已关闭", "status": "completed", "passes": true},
+    {"id": 15, "module": "工作流引擎", "name": "自动派发规则", "description": "根据规则自动分配工单", "status": "pending", "passes": false},
+    {"id": 16, "module": "工作流引擎", "name": "手动分配/转派", "description": "手动分配或转派工单", "status": "completed", "passes": true},
+    {"id": 17, "module": "工作流引擎", "name": "驳回/退回操作", "description": "工单驳回和退回功能", "status": "pending", "passes": false},
+    {"id": 18, "module": "工作流引擎", "name": "SLA服务等级", "description": "响应时限、处理时限", "status": "completed", "passes": true},
+    {"id": 19, "module": "工作流引擎", "name": "超时提醒", "description": "工单超时自动提醒", "status": "pending", "passes": false},
+    {"id": 20, "module": "工作流引擎", "name": "工单历史/操作日志", "description": "记录工单的所有操作历史", "status": "completed", "passes": true},
+    {"id": 21, "module": "通知系统", "name": "站内消息", "description": "系统内部消息通知", "status": "pending", "passes": false},
+    {"id": 22, "module": "通知系统", "name": "邮件通知", "description": "邮件通知（开发阶段模拟）", "status": "pending", "passes": false},
+    {"id": 23, "module": "通知系统", "name": "通知偏好设置", "description": "用户自定义通知偏好", "status": "pending", "passes": false},
+    {"id": 24, "module": "数据统计", "name": "个人工作台/数据看板", "description": "个人工作台和数据概览", "status": "completed", "passes": true},
+    {"id": 25, "module": "数据统计", "name": "团队工作量统计", "description": "团队工作量统计报表", "status": "pending", "passes": false},
+    {"id": 26, "module": "数据统计", "name": "工单趋势分析", "description": "工单趋势图表分析", "status": "pending", "passes": false},
+    {"id": 27, "module": "数据统计", "name": "响应时间统计", "description": "工单响应时间统计分析", "status": "pending", "passes": false},
+    {"id": 28, "module": "数据统计", "name": "导出Excel报表", "description": "导出数据报表为Excel格式", "status": "pending", "passes": false},
+    {"id": 29, "module": "系统管理", "name": "系统配置", "description": "系统参数配置管理", "status": "pending", "passes": false},
+    {"id": 30, "module": "系统管理", "name": "操作审计日志", "description": "系统操作审计日志", "status": "pending", "passes": false},
+    {"id": 31, "module": "系统管理", "name": "系统公告管理", "description": "系统公告发布和管理", "status": "pending", "passes": false},
+    {"id": 32, "module": "嵌入式组件", "name": "JS SDK", "description": "供第三方系统嵌入的JS SDK", "status": "pending", "passes": false},
+    {"id": 33, "module": "嵌入式组件", "name": "API接口", "description": "供第三方系统调用的REST API", "status": "completed", "passes": true}
   ]
 }

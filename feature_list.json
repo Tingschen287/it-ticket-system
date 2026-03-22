@@ -24,7 +24,7 @@
     {"id": 20, "module": "工作流引擎", "name": "工单历史/操作日志", "description": "记录工单的所有操作历史", "status": "completed", "passes": true},
     {"id": 21, "module": "通知系统", "name": "站内消息", "description": "系统内部消息通知", "status": "completed", "passes": true},
     {"id": 22, "module": "通知系统", "name": "邮件通知", "description": "邮件通知（开发阶段模拟）", "status": "completed", "passes": true},
-    {"id": 23, "module": "通知系统", "name": "通知偏好设置", "description": "用户自定义通知偏好", "status": "pending", "passes": false},
+    {"id": 23, "module": "通知系统", "name": "通知偏好设置", "description": "用户自定义通知偏好", "status": "completed", "passes": true},
     {"id": 24, "module": "数据统计", "name": "个人工作台/数据看板", "description": "个人工作台和数据概览", "status": "completed", "passes": true},
     {"id": 25, "module": "数据统计", "name": "团队工作量统计", "description": "团队工作量统计报表", "status": "pending", "passes": false},
     {"id": 26, "module": "数据统计", "name": "工单趋势分析", "description": "工单趋势图表分析", "status": "pending", "passes": false},

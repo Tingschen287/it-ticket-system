@@ -30,7 +30,7 @@
     {"id": 26, "module": "数据统计", "name": "工单趋势分析", "description": "工单趋势图表分析", "status": "completed", "passes": true},
     {"id": 27, "module": "数据统计", "name": "响应时间统计", "description": "工单响应时间统计分析", "status": "completed", "passes": true},
     {"id": 28, "module": "数据统计", "name": "导出Excel报表", "description": "导出数据报表为Excel格式", "status": "completed", "passes": true},
-    {"id": 29, "module": "系统管理", "name": "系统配置", "description": "系统参数配置管理", "status": "pending", "passes": false},
+    {"id": 29, "module": "系统管理", "name": "系统配置", "description": "系统参数配置管理", "status": "completed", "passes": true},
     {"id": 30, "module": "系统管理", "name": "操作审计日志", "description": "系统操作审计日志", "status": "pending", "passes": false},
     {"id": 31, "module": "系统管理", "name": "系统公告管理", "description": "系统公告发布和管理", "status": "pending", "passes": false},
     {"id": 32, "module": "嵌入式组件", "name": "JS SDK", "description": "供第三方系统嵌入的JS SDK", "status": "pending", "passes": false},

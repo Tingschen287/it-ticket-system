@@ -1,28 +1,29 @@
 package com.itticket.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "system_configs")
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class SystemConfig {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false)
+    @Column(name = "config_key", unique = true, nullable = false)
     private String configKey;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(name = "config_value", columnDefinition = "TEXT")
     private String configValue;
 
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "category")
+    private String category;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;

@@ -1,61 +1,70 @@
 package com.itticket.controller;
 
-import com.itticket.entity.SystemConfig;
-import com.itticket.repository.SystemConfigRepository;
+import com.itticket.dto.SystemConfigDto;
+import com.itticket.service.SystemConfigService;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
-@RequestMapping("/api/configs")
+@RequestMapping("/api/system/config")
 @RequiredArgsConstructor
 public class SystemConfigController {
 
-    private final SystemConfigRepository systemConfigRepository;
+    private final SystemConfigService configService;
+
+    @PostConstruct
+    public void init() {
+        configService.initializeDefaultConfigs();
+    }
 
     @GetMapping
-    public ResponseEntity<List<SystemConfig>> getAllConfigs() {
-        return ResponseEntity.ok(systemConfigRepository.findAll());
+    public ResponseEntity<List<SystemConfigDto>> getAllConfigs() {
+        return ResponseEntity.ok(configService.getAllConfigs());
+    }
+
+    @GetMapping("/category/{category}")
+    public ResponseEntity<List<SystemConfigDto>> getConfigsByCategory(@PathVariable String category) {
+        return ResponseEntity.ok(configService.getConfigsByCategory(category));
     }
 
     @GetMapping("/{key}")
-    public ResponseEntity<?> getConfigByKey(@PathVariable String key) {
-        return systemConfigRepository.findByConfigKey(key)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
-    }
-
-    @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping
-    public ResponseEntity<?> createConfig(@RequestBody SystemConfig config) {
-        if (systemConfigRepository.findByConfigKey(config.getConfigKey()).isPresent()) {
-            return ResponseEntity.badRequest().body("配置键已存在");
-        }
-        return ResponseEntity.ok(systemConfigRepository.save(config));
-    }
-
-    @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/{id}")
-    public ResponseEntity<?> updateConfig(@PathVariable Long id, @RequestBody SystemConfig config) {
-        return systemConfigRepository.findById(id)
-                .map(existing -> {
-                    existing.setConfigValue(config.getConfigValue());
-                    existing.setDescription(config.getDescription());
-                    return ResponseEntity.ok(systemConfigRepository.save(existing));
-                })
-                .orElse(ResponseEntity.notFound().build());
-    }
-
-    @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteConfig(@PathVariable Long id) {
-        if (!systemConfigRepository.existsById(id)) {
+    public ResponseEntity<SystemConfigDto> getConfigByKey(@PathVariable String key) {
+        SystemConfigDto config = configService.getConfigByKey(key);
+        if (config == null) {
             return ResponseEntity.notFound().build();
         }
-        systemConfigRepository.deleteById(id);
+        return ResponseEntity.ok(config);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<SystemConfigDto> updateConfig(@PathVariable Long id, @RequestBody SystemConfigDto dto) {
+        return ResponseEntity.ok(configService.updateConfig(id, dto));
+    }
+
+    @PostMapping
+    public ResponseEntity<SystemConfigDto> setConfig(@RequestBody SystemConfigDto dto) {
+        return ResponseEntity.ok(configService.setConfig(
+                dto.getConfigKey(),
+                dto.getConfigValue(),
+                dto.getDescription(),
+                dto.getCategory()
+        ));
+    }
+
+    @PostMapping("/batch")
+    public ResponseEntity<Void> batchUpdateConfigs(@RequestBody Map<String, String> configs) {
+        configService.batchUpdateConfigs(configs);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteConfig(@PathVariable Long id) {
+        configService.deleteConfig(id);
         return ResponseEntity.ok().build();
     }
 }

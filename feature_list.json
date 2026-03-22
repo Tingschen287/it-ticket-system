@@ -33,7 +33,7 @@
     {"id": 29, "module": "系统管理", "name": "系统配置", "description": "系统参数配置管理", "status": "completed", "passes": true},
     {"id": 30, "module": "系统管理", "name": "操作审计日志", "description": "系统操作审计日志", "status": "completed", "passes": true},
     {"id": 31, "module": "系统管理", "name": "系统公告管理", "description": "系统公告发布和管理", "status": "completed", "passes": true},
-    {"id": 32, "module": "嵌入式组件", "name": "JS SDK", "description": "供第三方系统嵌入的JS SDK", "status": "pending", "passes": false},
+    {"id": 32, "module": "嵌入式组件", "name": "JS SDK", "description": "供第三方系统嵌入的JS SDK", "status": "completed", "passes": true},
     {"id": 33, "module": "嵌入式组件", "name": "API接口", "description": "供第三方系统调用的REST API", "status": "completed", "passes": true}
   ]
 }

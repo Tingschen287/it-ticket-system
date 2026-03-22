@@ -1,0 +1,27 @@
+# Maven
+backend/target/
+backend/.mvn/
+backend/mvnw
+backend/mvnw.cmd
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local

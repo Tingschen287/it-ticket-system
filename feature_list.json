@@ -16,7 +16,7 @@
     {"id": 12, "module": "工单核心", "name": "工单模板", "description": "预设常用工单模板", "status": "completed", "passes": true},
     {"id": 13, "module": "工单核心", "name": "附件上传", "description": "工单附件上传和管理", "status": "completed", "passes": true},
     {"id": 14, "module": "工作流引擎", "name": "状态流转", "description": "新建→待评估→开发中→待测试→已完成→已关闭", "status": "completed", "passes": true},
-    {"id": 15, "module": "工作流引擎", "name": "自动派发规则", "description": "根据规则自动分配工单", "status": "pending", "passes": false},
+    {"id": 15, "module": "工作流引擎", "name": "自动派发规则", "description": "根据规则自动分配工单", "status": "completed", "passes": true},
     {"id": 16, "module": "工作流引擎", "name": "手动分配/转派", "description": "手动分配或转派工单", "status": "completed", "passes": true},
     {"id": 17, "module": "工作流引擎", "name": "驳回/退回操作", "description": "工单驳回和退回功能", "status": "completed", "passes": true},
     {"id": 18, "module": "工作流引擎", "name": "SLA服务等级", "description": "响应时限、处理时限", "status": "completed", "passes": true},

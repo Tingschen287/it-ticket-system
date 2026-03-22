@@ -21,6 +21,7 @@ public class TicketService {
     private final DepartmentRepository departmentRepository;
     private final SlaRepository slaRepository;
     private final TicketHistoryRepository ticketHistoryRepository;
+    private final AutoAssignRuleService autoAssignRuleService;
 
     @Transactional
     public Ticket createTicket(CreateTicketRequest request, User reporter) {
@@ -37,8 +38,14 @@ public class TicketService {
                     .ifPresent(ticket::setDepartment);
         }
 
+        // 如果没有指定处理人，尝试自动派发
         if (request.getAssigneeId() != null) {
             userRepository.findById(request.getAssigneeId())
+                    .ifPresent(ticket::setAssignee);
+        } else {
+            // 应用自动派发规则
+            autoAssignRuleService.findAssigneeForTicket(ticket)
+                    .flatMap(userRepository::findById)
                     .ifPresent(ticket::setAssignee);
         }
 

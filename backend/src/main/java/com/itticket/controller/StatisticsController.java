@@ -3,13 +3,21 @@ package com.itticket.controller;
 import com.itticket.dto.ResponseTimeDto;
 import com.itticket.dto.TeamWorkloadDto;
 import com.itticket.dto.TicketTrendDto;
+import com.itticket.entity.Ticket;
+import com.itticket.service.ExcelExportService;
 import com.itticket.service.StatisticsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 
@@ -19,6 +27,7 @@ import java.util.Map;
 public class StatisticsController {
 
     private final StatisticsService statisticsService;
+    private final ExcelExportService excelExportService;
 
     @GetMapping("/team-workload")
     public ResponseEntity<List<TeamWorkloadDto>> getTeamWorkload(
@@ -68,5 +77,23 @@ public class StatisticsController {
     @GetMapping("/avg-response-time")
     public ResponseEntity<Map<String, Double>> getAverageResponseTimes() {
         return ResponseEntity.ok(statisticsService.getAverageResponseTimes());
+    }
+
+    @GetMapping("/export/tickets")
+    public ResponseEntity<byte[]> exportTicketsToExcel(
+            @RequestParam(required = false) List<Ticket.Status> statuses,
+            @RequestParam(required = false) Ticket.Priority priority,
+            @RequestParam(required = false) Ticket.TicketType type,
+            @RequestParam(required = false) Long departmentId) throws IOException {
+
+        byte[] excelContent = excelExportService.exportTicketsToExcel(statuses, priority, type, departmentId);
+
+        String filename = "tickets_" + LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd")) + ".xlsx";
+        String encodedFilename = URLEncoder.encode(filename, StandardCharsets.UTF_8).replace("+", "%20");
+
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename*=UTF-8''" + encodedFilename)
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .body(excelContent);
     }
 }

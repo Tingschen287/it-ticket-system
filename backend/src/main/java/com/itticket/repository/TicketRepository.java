@@ -43,4 +43,6 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
 
     @Query("SELECT COUNT(t) FROM Ticket t WHERE t.assignee.id = :assigneeId")
     long countByAssigneeId(@Param("assigneeId") Long assigneeId);
+
+    List<Ticket> findByStatusNotIn(List<Ticket.Status> statuses);
 }

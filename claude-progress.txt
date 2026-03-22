@@ -9,7 +9,7 @@
 - [x] Create PostgreSQL database (it_ticket_db)
 - [x] Configure Git and SSH
 
-### Completed Features (18/33)
+### Completed Features (23/33)
 | ID | Feature | Status |
 |----|---------|--------|
 | 1 | 用户注册/登录 | ✅ PASSED |
@@ -23,21 +23,22 @@
 | 9 | 工单列表/看板视图 | ✅ PASSED |
 | 10 | 工单详情页 | ✅ PASSED |
 | 11 | 工单搜索/筛选 | ✅ PASSED |
+| 12 | 工单模板 | ✅ PASSED |
+| 13 | 附件上传 | ✅ PASSED |
 | 14 | 状态流转 | ✅ PASSED |
 | 16 | 手动分配/转派 | ✅ PASSED |
+| 17 | 驳回/退回操作 | ✅ PASSED |
 | 18 | SLA服务等级 | ✅ PASSED |
 | 20 | 工单历史/操作日志 | ✅ PASSED |
+| 21 | 站内消息 | ✅ PASSED |
+| 22 | 邮件通知 | ✅ PASSED |
 | 24 | 个人工作台/数据看板 | ✅ PASSED |
-| 33 | API接口 | ✅ PASSED |
+| 32 | API接口 | ✅ PASSED |
+| 33 | JS SDK | ✅ PASSED |
 
-### Remaining Features (15/33)
-- #12 工单模板
-- #13 附件上传
+### Remaining Features (10/33)
 - #15 自动派发规则
-- #17 驳回/退回操作
 - #19 超时提醒
-- #21 站内消息
-- #22 邮件通知
 - #23 通知偏好设置
 - #25 团队工作量统计
 - #26 工单趋势分析
@@ -46,6 +47,5 @@
 - #29 系统配置
 - #30 操作审计日志
 - #31 系统公告管理
-- #32 JS SDK
 
 ---
